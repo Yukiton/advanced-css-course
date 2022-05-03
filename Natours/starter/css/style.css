@@ -31,14 +31,12 @@ html {
   position: relative;
   clip-path: polygon(0 0, 100vw 0, 100vw 75vh, 0 100%);
 }
-
-.header__logo-box {
+.header .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
-.header__logo {
+.header .header__logo-box .header__logo {
   height: 2.5rem;
 }
 
@@ -49,27 +47,61 @@ html {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
-.header__heading-primary {
+.header__text-box .header__heading-primary {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
 }
-
-.header__heading-primary--main {
+.header__text-box .header__heading-primary .header__heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
   animation: moveInLeft 1.5s;
 }
-
-.header__heading-primary--sub {
+.header__text-box .header__heading-primary .header__heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
   animation: moveInRight 1.5s;
+}
+.header__text-box .btn:link, .header__text-box .btn:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+}
+.header__text-box .btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.header__text-box .btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.header__text-box .btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+.header__text-box .btn.btn--white {
+  background: #fff;
+  padding: 1.5rem 4rem;
+  color: #777;
+  font-size: 1.6rem;
+  border-radius: 10rem;
+}
+.header__text-box .btn.btn--white::after {
+  background-color: #fff;
 }
 
 @keyframes moveInLeft {
@@ -91,49 +123,6 @@ html {
     opacity: 1;
     transform: translate(0);
   }
-}
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn--white {
-  background: #fff;
-  padding: 1.5rem 4rem;
-  color: #777;
-  font-size: 1.6rem;
-  border-radius: 10rem;
-}
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.btn::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  display: inline-block;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scale(1.5);
-  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
