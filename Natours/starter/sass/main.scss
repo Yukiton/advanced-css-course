@@ -40,7 +40,7 @@ html {
     position: relative;
     clip-path: polygon(0 0, 100vw 0, 100vw 75vh, 0 100%);
 
-    .header__logo-box {
+    &__logo-box {
         position: absolute;
         top: 4rem;
         left: 4rem;
@@ -49,21 +49,21 @@ html {
             height: 2.5rem;
         }
     }
-}
 
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 
-    .header__heading-primary {
+    &__heading-primary {
         color: $color-white;
         text-transform: uppercase;
         margin-bottom: 6rem;
 
-        .header__heading-primary--main {
+        &--main {
             display: block;
             font-size: 6rem;
             font-weight: 400;
@@ -71,7 +71,7 @@ html {
             animation: moveInLeft 1.5s;
         }
 
-        .header__heading-primary--sub {
+        &--sub {
             display: block;
             font-size: 2rem;
             font-weight: 700;
@@ -80,50 +80,54 @@ html {
         }
     }
 
-    .btn {
 
-        &:link,
-        &:visited {
-            display: inline-block;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.2s;
-            position: relative;
-        }
+}
+
+
+
+.btn {
+
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
         &::after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            display: inline-block;
-            border-radius: 10rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transition: all .4s;
+            transform: scale(1.5);
+            opacity: 0;
         }
+    }
 
-        &:hover {
-            transform: translateY(-.3rem);
-            box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    &--white {
+        background: $color-white;
+        padding: 1.5rem 4rem;
+        color: $color-gray;
+        font-size: 1.6rem;
+        border-radius: 10rem;
 
-            &::after {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        &.btn--white {
-            background: $color-white;
-            padding: 1.5rem 4rem;
-            color: $color-gray;
-            font-size: 1.6rem;
-            border-radius: 10rem;
-
-            &::after {
-                background-color: $color-white;
-            }
+        &::after {
+            background-color: $color-white;
         }
     }
 }
