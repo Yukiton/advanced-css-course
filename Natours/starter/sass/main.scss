@@ -1,11 +1,5 @@
-/*
-COLORS:
+@import "base/base";
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 $color-light-green: #7ed56f;
 $color-medium-green: #55c57a;
 $color-dark-green: #28b485;
@@ -44,10 +38,10 @@ html {
         position: absolute;
         top: 4rem;
         left: 4rem;
+    }
 
-        .header__logo {
-            height: 2.5rem;
-        }
+    &__logo {
+        height: 2.5rem;
     }
 
     &__text-box {
